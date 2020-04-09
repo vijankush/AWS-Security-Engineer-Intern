@@ -1,0 +1,1 @@
+An Amazon Kinesis Analytics record pre-processor that receives kinesis records as input and returns them as a JSON Object with a processing status. Use this processor as a starting point for custom transformation logic in Kinesis Analytics.
