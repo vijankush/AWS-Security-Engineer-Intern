@@ -20,7 +20,7 @@ lr.on('line', function (str) {
         lr.pause();
         console.log("# of Data sent: " + count);
         lr.resume();
-      }
+      } 
     } catch (err) {
       console.log(`err: ${err}\n`);
     }
