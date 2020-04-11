@@ -4,12 +4,12 @@ CREATE STREAM "DESTINATION_SQL_STREAM"
 CREATE OR REPLACE PUMP "PUMP_FOR_IP_COUNT" AS
     INSERT INTO "DESTINATION_SQL_STREAM"
     SELECT STREAM 
-        FLOOR(cloudtraillogs.APPROXIMATE_ARRIVAL_TIME TO MINUTE) AS arrival_time,
+        STEP(cloudtraillogs.APPROXIMATE_ARRIVAL_TIME BY INTERVAL '60' SECOND) AS arrival_time,
         "ip",
         COUNT(*) AS statusCount,
         SUM("positive") as pos,
         SUM("negative") as neg
         FROM "SOURCE_SQL_STREAM_001" cloudtraillogs
     GROUP BY "ip",
-        FLOOR(cloudtraillogs.ROWTIME TO MINUTE),
-	FLOOR(cloudtraillogs.APPROXIMATE_ARRIVAL_TIME TO MINUTE);
+        STEP(cloudtraillogs.ROWTIME BY INTERVAL '60' SECOND),
+	STEP(cloudtraillogs.APPROXIMATE_ARRIVAL_TIME BY INTERVAL '60' SECOND);
