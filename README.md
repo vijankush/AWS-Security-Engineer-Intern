@@ -1,15 +1,16 @@
 # AWS-Security-Engineer-Intern
 ![Nerve Center](https://lh5.googleusercontent.com/SmPXLoJjV-Pb9pS86kVBXdrFv-HZHRzj8Z-_k9obGOtIew6cue9qzhymg2jf-S8-ZE5IeNwvcBKmyw=w3360-h1942-rw)
-One of my biggest project involved taking logs of processes and transactions coming into AWS Kinesis, which I processed it to first convert it into a JSON file. JSON makes reading, parsing and analyzing data easier. 
+
+The Nerve Center was one of the biggest projects I worked on that involved taking logs of processes and transactions coming into AWS Kinesis, which I processed it to first convert it into a JSON file. JSON makes reading, parsing and analyzing data easier to make it work for SQL Queries.
 
 Then I made something I call a scoring handler, that is basically every transaction or process that is successful gets a positive score, and every transaction or process with errors gets a negative score. Those scores are added to each object made in JSON.
 
-Then all of this processed data is passed into an analytics application, where everything is grouped by ip address, timestamp, positive score, negative score, and a count of number of times we have seen the same ip address -> and all of this data from SQL is transferred into a database called DynamoDB, which basically stores all of this data in milliseconds and works really well on large-scale applications.
+Then all of this processed data is passed into an analytics application, where everything is grouped by ip address, timestamp, positive score, negative score, and a count of number of times we have seen the same ip address. All of this data from SQL is transferred into a database called DynamoDB, which basically stores all of this data in milliseconds and works really well on large-scale applications.
 
 Next steps included making a slack integrated notification application, which basically works like this: if I see more than x amount of errors per unit of time from the same ip, it will send a notification to the company's slack channel using webhooks. 
 
 In case of bad responses, then it does two things:
 1. It puts the IP in our Firewall Blacklist using AWS Web Application Firewall
-2. It creates a queue that triggers after lets say 10 minutes to tell AWS to unblock the IP.
+2. It creates a SQS queue that triggers after a specified time to tell AWS to unblock the IP.
 
 Essentially, the ultimate goal is that once we have all this setup, we can use the built-in firewall to autonomously turn off access to those specific ip's that are potentially trying to infiltrate or hack our system.
