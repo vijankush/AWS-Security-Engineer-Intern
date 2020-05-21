@@ -13,4 +13,4 @@ Next steps included making a slack integrated notification application, which ba
 
 Essentially, the ultimate goal is that once we have all this setup, we can use the built-in firewall to autonomously turn off access to those specific ip's that are potentially trying to infiltrate or hack our system.
 
-**Cannot provide mock copies of the code due to security reasons
+**Cannot provide mock copies of the code due to security reasons**
