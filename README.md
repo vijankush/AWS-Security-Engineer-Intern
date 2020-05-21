@@ -12,3 +12,5 @@ Next steps included making a slack integrated notification application, which ba
 2. It creates a SQS queue that triggers after a specified time to tell AWS to unblock the IP.
 
 Essentially, the ultimate goal is that once we have all this setup, we can use the built-in firewall to autonomously turn off access to those specific ip's that are potentially trying to infiltrate or hack our system.
+
+** Cannot provide mock copies of the code due to security reasons
