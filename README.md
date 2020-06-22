@@ -1,5 +1,5 @@
 # AWS-Security-Engineer-Intern
-![Nerve Center](https://lh5.googleusercontent.com/SmPXLoJjV-Pb9pS86kVBXdrFv-HZHRzj8Z-_k9obGOtIew6cue9qzhymg2jf-S8-ZE5IeNwvcBKmyw=w3360-h1942-rw)
+![Nerve Center](https://drive.google.com/uc?export=view&id=1RPH5gVvkLIvdwNm2W5cIXxv_H7m-UbRr)
 
 The Nerve Center was one of the biggest projects I worked on that involved taking logs of processes and transactions coming into AWS Kinesis, which I processed it to first convert it into a JSON file. JSON makes reading, parsing and analyzing data easier to make it work for SQL Queries.
 
